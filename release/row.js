@@ -8,6 +8,7 @@ var classNames = require('classnames/dedupe');
 var Row = React.createClass({
     displayName: 'Row',
 
+
     propTypes: {
         label: React.PropTypes.node,
         rowClassName: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array, React.PropTypes.object]),
@@ -34,7 +35,7 @@ var Row = React.createClass({
 
     renderLabel: function renderLabel() {
 
-        if (this.props.layout === 'elementOnly') {
+        if (!this.props.label || this.props.layout === 'elementOnly') {
             return '';
         }
 
@@ -104,6 +105,7 @@ var Row = React.createClass({
         }
 
         cssClasses.row.push(this.props.rowClassName);
+
         return React.createElement(
             'div',
             { className: classNames(cssClasses.row) },
