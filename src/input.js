@@ -7,6 +7,7 @@ var Formsy = require('formsy-react');
 var ComponentMixin = require('./mixins/component');
 var Row = require('./row');
 var Icon = require('./icon');
+var classNames = require('classnames/dedupe');
 
 var Input = React.createClass({
 
@@ -40,7 +41,9 @@ var Input = React.createClass({
             React.PropTypes.node
         ]),
         buttonBefore: React.PropTypes.node,
-        buttonAfter: React.PropTypes.node
+        buttonAfter: React.PropTypes.node,
+        lg: React.PropTypes.bool,
+        sm: React.PropTypes.bool,
     },
 
     getDefaultProps: function() {
@@ -113,8 +116,15 @@ var Input = React.createClass({
     },
 
     renderInputGroup: function(element) {
+        var cssClasses=['input-group'];
+        if (this.props.lg){
+            cssClasses.push('input-group-lg');
+        }
+        if (this.props.sm){
+            cssClasses.push('input-group-sm');
+        }
         return (
-            <div className="input-group">
+            <div className={classNames(cssClasses)}>
                 {this.renderAddon(this.props.addonBefore)}
                 {this.renderButton(this.props.buttonBefore)}
                 {element}
