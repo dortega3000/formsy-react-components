@@ -10,6 +10,8 @@ module.exports = {
     Row: require('./row'),
     Select: require('./select'),
     Textarea: require('./textarea'),
+    DateTimePicker: require('./date-time-picker'),
     ComponentMixin: require('./mixins/component'),
     ParentContextMixin: require('./mixins/parent-context')
+
 };

@@ -5,42 +5,30 @@
 
 var React = require('react');
 var Formsy = require('formsy-react');
+var DateTimePicker = require('react-bootstrap-datetimepicker');
+
 var ComponentMixin = require('./mixins/component');
 var Row = require('./row');
-
+var DateTimePicker = require('./row');
 var Textarea = React.createClass({
 
     mixins: [Formsy.Mixin, ComponentMixin],
 
-    propTypes: {
-        rows: React.PropTypes.number,
-        cols: React.PropTypes.number
-    },
-
-    getDefaultProps: function() {
-        return {
-            rows: 3,
-            cols: 0 // React doesn't render the cols attribute if it is zero
-        };
-    },
-
-    changeValue: function(event) {
-        var value = event.currentTarget.value;
+    changeValue: function(value) {
         this.setValue(value);
         this.props.onChange(this.props.name, value);
     },
 
     renderElement: function() {
         return (
-            <textarea
+            <DateTimePicker
                 ref="element"
-                className="form-control"
                 {...this.props}
                 id={this.getId()}
-                value={this.getValue()}
+                dateTime={this.getValue()}
                 onChange={this.changeValue}
                 disabled={this.isFormDisabled() || this.props.disabled}
-            ></textarea>
+            ></DateTimePicker>
         );
     },
 
