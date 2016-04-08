@@ -7,13 +7,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var React = require('react');
 var Formsy = require('formsy-react');
-var DateTimePicker = require('react-bootstrap-datetimepicker');
+var InnerDateTimePicker = require('react-bootstrap-datetimepicker');
 
 var ComponentMixin = require('./mixins/component');
 var Row = require('./row');
-var DateTimePicker = require('./row');
-var Textarea = React.createClass({
-    displayName: 'Textarea',
+var DateTimePicker = React.createClass({
+    displayName: 'DateTimePicker',
 
 
     mixins: [Formsy.Mixin, ComponentMixin],
@@ -24,7 +23,7 @@ var Textarea = React.createClass({
     },
 
     renderElement: function renderElement() {
-        return React.createElement(DateTimePicker, _extends({
+        return React.createElement(InnerDateTimePicker, _extends({
             ref: 'element'
         }, this.props, {
             id: this.getId(),
@@ -52,4 +51,4 @@ var Textarea = React.createClass({
     }
 });
 
-module.exports = Textarea;
+module.exports = DateTimePicker;
