@@ -33,7 +33,7 @@ var File = React.createClass({
             return element;
         }
 
-        var warningIcon = '';
+        var warningIcon = null;
         if (this.showErrors()) {
             warningIcon = (
                 <Icon symbol="remove" className="form-control-feedback" />
@@ -56,6 +56,7 @@ var File = React.createClass({
     renderElement: function() {
         return (
             <input
+                ref="element"
                 {...this.props}
                 id={this.getId()}
                 type="file"

@@ -37,7 +37,7 @@ var File = React.createClass({
             return element;
         }
 
-        var warningIcon = '';
+        var warningIcon = null;
         if (this.showErrors()) {
             warningIcon = React.createElement(Icon, { symbol: 'remove', className: 'form-control-feedback' });
         }
@@ -55,7 +55,9 @@ var File = React.createClass({
     },
 
     renderElement: function renderElement() {
-        return React.createElement('input', _extends({}, this.props, {
+        return React.createElement('input', _extends({
+            ref: 'element'
+        }, this.props, {
             id: this.getId(),
             type: 'file',
             label: null,

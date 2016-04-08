@@ -77,7 +77,7 @@ var Input = React.createClass({
             return element;
         }
 
-        var warningIcon = '';
+        var warningIcon = null;
         if (this.showErrors()) {
             warningIcon = (
                 <Icon symbol="remove" className="form-control-feedback" />
@@ -104,6 +104,7 @@ var Input = React.createClass({
         }
         return (
             <input
+                ref="element"
                 className={className}
                 {...this.props}
                 id={this.getId()}
