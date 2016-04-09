@@ -28,7 +28,7 @@ var DateTimePicker = React.createClass({
         }, this.props, {
             id: this.getId(),
             dateTime: this.getValue(),
-            defaultText: this.getValue(),
+            defaultText: this.getValue() || '',
             onChange: this.changeValue,
             disabled: this.isFormDisabled() || this.props.disabled
         }));
