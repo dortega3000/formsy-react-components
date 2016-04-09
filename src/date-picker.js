@@ -5,7 +5,7 @@
 
 var React = require('react');
 var Formsy = require('formsy-react');
-var InnerDateTimePicker = require('react-bootstrap-date-picker');
+var InnerDatePicker = require('react-bootstrap-date-picker');
 
 var ComponentMixin = require('./mixins/component');
 var Row = require('./row');
