@@ -7,12 +7,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var React = require('react');
 var Formsy = require('formsy-react');
-var InnerDateTimePicker = require('react-bootstrap-datetimepicker');
+var InnerDateTimePicker = require('react-bootstrap-date-picker');
 
 var ComponentMixin = require('./mixins/component');
 var Row = require('./row');
-var DateTimePicker = React.createClass({
-    displayName: 'DateTimePicker',
+var DatePicker = React.createClass({
+    displayName: 'DatePicker',
 
 
     mixins: [Formsy.Mixin, ComponentMixin],
@@ -23,11 +23,11 @@ var DateTimePicker = React.createClass({
     },
 
     renderElement: function renderElement() {
-        return React.createElement(InnerDateTimePicker, _extends({
+        return React.createElement(InnerDatePicker, _extends({
             ref: 'element'
         }, this.props, {
             id: this.getId(),
-            defaultText: this.getValue() || '',
+            value: this.getValue() || '',
             onChange: this.changeValue,
             disabled: this.isFormDisabled() || this.props.disabled
         }));
@@ -51,4 +51,4 @@ var DateTimePicker = React.createClass({
     }
 });
 
-module.exports = DateTimePicker;
+module.exports = DatePicker;
