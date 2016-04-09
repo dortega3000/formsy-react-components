@@ -23,13 +23,12 @@ var DateTimePicker = React.createClass({
     },
 
     renderElement: function renderElement() {
-        var value = this.getValue();
-        defaultText = value || this.props.placeholder;
         return React.createElement(InnerDateTimePicker, _extends({
             ref: 'element'
         }, this.props, {
             id: this.getId(),
-            defaultText: this.getValue(),
+            dateTime: this.getValue(),
+            defaultText: this.getValue() || this.props.placeholder,
             onChange: this.changeValue,
             disabled: this.isFormDisabled() || this.props.disabled
         }));
